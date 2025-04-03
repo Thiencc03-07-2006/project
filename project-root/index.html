@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/formSite.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/nutrium-favicon.ico"
+    />
+  </head>
+  <body>
+    <div class="all-box">
+      <div class="menu" style="display: none">
+        <header>
+          <img class="a-quarter-img" src="./assets/images/Logo.png" alt="" />
+        </header>
+        <main>
+          <a class="now-paper" href="./index.html"
+            ><div>
+              <img class="a-quarter-img" src="./assets/icons/home.png" alt="" />
+            </div>
+            Homepage</a
+          ><a href="./pages/ingredient.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="./assets/icons/food_off.png"
+                alt=""
+              />
+            </div>
+            Foods</a
+          >
+          <a href="./pages/recipes.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="./assets/icons/recipes_off.png"
+                alt=""
+              />
+            </div>
+            Recipes</a
+          >
+        </main>
+        <footer>
+          <a href="./pages/signIn.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="./assets/icons/person_add.png"
+                alt=""
+              />
+            </div>
+            <p>Sign out</p></a
+          >
+        </footer>
+      </div>
+      <div class="container">
+        <header>
+          <div class="header-top">
+            <button onclick="openMenu()">
+              <img class="a-quarter-img" src="./assets/icons/Menu.png" alt="" />
+            </button>
+            <div>
+              <span>Cường Trần</span>
+              <div class="box"></div>
+            </div>
+          </div>
+          <div class="header-bottom">
+            <p>Recipes</p>
+            <p>Create, check and update recipes</p>
+          </div>
+        </header>
+        <main>
+          <div class="main-content">
+            <div class="main-top">
+              <p>Recipes</p>
+              <p>Search, check and create new recipes</p>
+              <div class="input">
+                <input type="search" id="search" placeholder="Search food" />
+                <div>
+                  <button>
+                    <img
+                      class="a-quarter-img"
+                      src="./assets/icons/sort.png"
+                      alt=""
+                    />
+                  </button>
+                  <select name="sort" id="sort">
+                    <option value="">Sort by nutrient</option>
+                  </select>
+                </div>
+                <select name="filter" id="filter">
+                  <option value="">Category</option>
+                </select>
+              </div>
+            </div>
+            <div class="main-bottom">
+              <div class="box">
+                <div>
+                  <div>
+                    <img
+                      class="a-quarter-img"
+                      src="./assets/icons/group.png"
+                      alt=""
+                    />
+                    <p>Community Recipes</p>
+                  </div>
+                </div>
+                <div class="box-right">
+                  <p class="text-1">
+                    Turmeric Roasted Cauliflower Salad (lowfodmap)
+                  </p>
+                  <div class="text-2">
+                    <p>Joana Jardim</p>
+                    <div class="box-like">
+                      <img
+                        class="a-quarter-img"
+                        src="./assets/icons/heart.png"
+                        alt=""
+                      />
+                      <p>37</p>
+                    </div>
+                  </div>
+                  <div class="text-3">
+                    <img
+                      class="a-quarter-img"
+                      src="./assets/icons/Vector.png"
+                      alt=""
+                    />
+                    <p>Vegetarian dishes</p>
+                  </div>
+                  <div class="box-info">
+                    <table>
+                      <tr>
+                        <td class="box-info-left">by</td>
+                        <td>Energy</td>
+                        <td>Fat</td>
+                        <td>Carbohydrate</td>
+                        <td>Protein</td>
+                      </tr>
+                      <tr>
+                        <td class="box-info-left">100g</td>
+                        <td class="stats">143 kcal</td>
+                        <td class="stats">6 g</td>
+                        <td class="stats">18 g</td>
+                        <td class="stats">5 g</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div>
+                  <div>
+                    <img
+                      class="a-quarter-img"
+                      src="./assets/icons/group.png"
+                      alt=""
+                    />
+                    <p>Community Recipes</p>
+                  </div>
+                </div>
+                <div class="box-right">
+                  <p class="text-1">
+                    Turmeric Roasted Cauliflower Salad (lowfodmap)
+                  </p>
+                  <div class="text-2">
+                    <p>Joana Jardim</p>
+                    <div class="box-like">
+                      <img
+                        class="a-quarter-img"
+                        src="./assets/icons/heart.png"
+                        alt=""
+                      />
+                      <p>37</p>
+                    </div>
+                  </div>
+                  <div class="text-3">
+                    <img
+                      class="a-quarter-img"
+                      src="./assets/icons/Vector.png"
+                      alt=""
+                    />
+                    <p>Vegetarian dishes</p>
+                  </div>
+                  <div class="box-info">
+                    <table>
+                      <tr>
+                        <td class="box-info-left">by</td>
+                        <td>Energy</td>
+                        <td>Fat</td>
+                        <td>Carbohydrate</td>
+                        <td>Protein</td>
+                      </tr>
+                      <tr>
+                        <td class="box-info-left">100g</td>
+                        <td class="stats">10 kcal</td>
+                        <td class="stats">20 g</td>
+                        <td class="stats">3 g</td>
+                        <td class="stats">50 g</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="paper-bar">
+                <button>
+                  <img
+                    class="a-quarter-img"
+                    src="./assets/icons/prev.png"
+                    alt=""
+                  />
+                </button>
+                <button class="now-paper">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>...</button>
+                <button>1037</button>
+                <button>1038</button>
+                <button>
+                  <img
+                    class="a-quarter-img"
+                    src="./assets/icons/next.png"
+                    alt=""
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

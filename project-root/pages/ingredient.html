@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingredient</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/formSite.css" />
+    <link rel="stylesheet" href="../css/ingredient.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/nutrium-favicon.ico"
+    />
+  </head>
+  <body>
+    <div class="all-box">
+      <div class="menu" style="display: none">
+        <header>
+          <img class="a-quarter-img" src="../assets/images/Logo.png" alt="" />
+        </header>
+        <main>
+          <a href="../index.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/home_off.png"
+                alt=""
+              />
+            </div>
+            Homepage</a
+          ><a class="now-paper" href="./ingredient.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/food.png"
+                alt=""
+              />
+            </div>
+            Foods</a
+          >
+          <a href="../pages/recipes.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/recipes_off.png"
+                alt=""
+              />
+            </div>
+            Recipes</a
+          >
+        </main>
+        <footer>
+          <a href="../pages/signIn.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/person_add.png"
+                alt=""
+              />
+            </div>
+            <p>Sign out</p></a
+          >
+        </footer>
+      </div>
+      <div class="container">
+        <header>
+          <div class="header-top">
+            <button onclick="openMenu()">
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/Menu.png"
+                alt=""
+              />
+            </button>
+            <div>
+              <span>Cường Trần</span>
+              <div class="box"></div>
+            </div>
+          </div>
+          <div class="header-bottom">
+            <p>Food databases</p>
+            <p>Create, check and update foods that you can use on meal plans</p>
+          </div>
+        </header>
+        <main>
+          <div class="main-content">
+            <div class="main-top">
+              <p>Recipes</p>
+              <p>Search, check and create new recipes</p>
+              <div class="input">
+                <input type="search" id="search" placeholder="Search food" />
+                <div>
+                  <button>
+                    <img
+                      class="a-quarter-img"
+                      src="../assets/icons/sort.png"
+                      alt=""
+                    />
+                  </button>
+                  <select name="sort" id="sort">
+                    <option value="">Sort by nutrient</option>
+                  </select>
+                </div>
+                <select name="filter" id="filter">
+                  <option value="">Category</option>
+                </select>
+              </div>
+            </div>
+            <div class="main-bottom">
+              <div class="list">
+                <div class="box">
+                  <div>
+                    <p>Ackee, canned, drained</p>
+                    <p>McCance and Widdowson's</p>
+                  </div>
+                  <table>
+                    <tr>
+                      <td class="stats">151 kcal</td>
+                      <td class="stats">15 g</td>
+                      <td class="stats">1 g</td>
+                      <td class="stats">3 g</td>
+                    </tr>
+                    <tr>
+                      <td>Energy</td>
+                      <td>Fat</td>
+                      <td>Carbohydrate</td>
+                      <td>Protein</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="box">
+                  <div>
+                    <p>Ackee, canned, drained</p>
+                    <p>McCance and Widdowson's</p>
+                  </div>
+                  <table>
+                    <tr>
+                      <td class="stats">151 kcal</td>
+                      <td class="stats">15 g</td>
+                      <td class="stats">1 g</td>
+                      <td class="stats">3 g</td>
+                    </tr>
+                    <tr>
+                      <td>Energy</td>
+                      <td>Fat</td>
+                      <td>Carbohydrate</td>
+                      <td>Protein</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="box">
+                  <div>
+                    <p>Ackee, canned, drained</p>
+                    <p>McCance and Widdowson's</p>
+                  </div>
+                  <table>
+                    <tr>
+                      <td class="stats">-</td>
+                      <td class="stats">15 g</td>
+                      <td class="stats">-</td>
+                      <td class="stats">3 g</td>
+                    </tr>
+                    <tr>
+                      <td>Energy</td>
+                      <td>Fat</td>
+                      <td>Carbohydrate</td>
+                      <td>Protein</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="box">
+                  <a href="../pages/ingredientAddFood.html"
+                    ><img
+                      class="a-quarter-img"
+                      src="../assets/icons/addFood.png"
+                      alt=""
+                    />Create food</a
+                  >
+                </div>
+              </div>
+              <div class="paper-bar">
+                <button class="now-paper">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>
+                  <img
+                    class="a-quarter-img"
+                    src="../assets/icons/3dot.png"
+                    alt=""
+                  />
+                </button>
+                <button>
+                  <img
+                    class="a-quarter-img"
+                    src="../assets/icons/next.png"
+                    alt=""
+                  />
+                </button>
+                <button>
+                  <img
+                    class="a-quarter-img"
+                    src="../assets/icons/endNext.png"
+                    alt=""
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script src="../js/ingredient.js"></script>
+  </body>
+</html>

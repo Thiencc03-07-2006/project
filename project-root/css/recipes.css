@@ -1,0 +1,316 @@
+.container main .main-top {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 1190px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+}
+.container main .main-top p {
+  font-family: Open Sans;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #888888;
+  margin-bottom: 15px;
+}
+.container main .main-top p:first-child {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #676a6c;
+  margin-bottom: 0;
+}
+.container main .main-top input {
+  width: 695px;
+  height: 34px;
+  border-radius: 1px;
+  border: 1px solid #e5e6e7;
+  padding: 8px 13px;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #676a6c;
+}
+.container main .main-top .input {
+  display: flex;
+  justify-content: space-between;
+}
+.container main .main-top button {
+  width: 36px;
+  height: 34px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border: 1px solid #eeeeee;
+}
+.container main .main-top select {
+  width: 200px;
+  height: 34px;
+  border: 1px solid #eeeeee;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18.57px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #555555;
+  padding: 6px 12px;
+  border-right: none;
+}
+.container main .main-top div select {
+  width: 200px;
+  height: 34px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border: 1px solid #eeeeee;
+  appearance: none;
+  color: #999999;
+}
+.container main .main-top div select[name="filter"] {
+  color: #555555;
+}
+.container main .main-top div {
+  display: flex;
+}
+.container main .main-bottom {
+  background-color: #ffffff;
+  padding: 20px;
+  padding-top: 11.1px;
+  width: 1190px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.container main .main-bottom .box {
+  margin-bottom: 30px;
+  border: 1px solid #eeeeee;
+  width: 565px;
+  height: 220px;
+  border-radius: 5px;
+  border-width: 1px;
+  display: flex;
+}
+.container main .main-bottom .box div:first-child {
+  width: 218px;
+  height: 218px;
+  top: 1px;
+  left: 1px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
+  flex-shrink: 0;
+}
+.container main .main-bottom .box div:first-child div {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  box-shadow: 0px 1px 3px 0px #dddddd;
+  width: 150.83999633789062px;
+  height: 28.5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 16.5px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #ea9f77;
+}
+.container main .main-bottom .box .box-right {
+  width: 100%;
+  position: relative;
+}
+.container main .main-bottom .box .box-right .text-1 {
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #282828;
+  margin-left: 20px;
+  margin-top: 21px;
+  width: calc(305px - 60px);
+  height: 40px;
+}
+.container main .main-bottom .box .box-right .text-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 48px;
+  margin-right: 20px;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19.5px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #676a6c;
+  margin-top: 13.9px;
+  margin-bottom: 10.1px;
+}
+.container main .main-bottom .box .box-right .text-2 .box-like {
+  width: 60px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #eeeeee;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #aaaaaa;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 7px;
+  padding-right: 11.01px;
+}
+.container main .main-bottom .box .box-right .text-2 .box-like:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+.container main .main-bottom .box .box-right .text-3 {
+  display: flex;
+  gap: 4px;
+  margin-left: 20px;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #676a6c;
+  align-items: center;
+}
+.container main .main-bottom .box .box-right .box-info {
+  width: 345px;
+  height: 54px;
+  border-top: 1px solid #eeeeee;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 11.5px 0 11px 15.48px;
+}
+.container main .main-bottom .box .box-right .box-info table {
+  width: 100%;
+}
+.container main .main-bottom .box .box-right .box-info td {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16.5px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #888888;
+}
+.container main .main-bottom .box .box-right .box-info .box-info-left {
+  text-align: left;
+}
+.container main .main-bottom .box .box-right .box-info .stats {
+  color: #282828;
+}
+.ex-box {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 0 20px calc(30px - 11.1px);
+}
+.ex-box div {
+  width: 64.67774963378906;
+  height: 16.5px;
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #2ba0cc;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.custom-checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 12px;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #2ba0cc;
+  display: inline-block;
+  position: relative;
+  border-radius: 1.6px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/icons/tick.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ex-box div span {
+  margin-left: 7.64px;
+}
+.ex-box div:first-child {
+  border: 1px solid #eeeeee;
+  padding: 0 13px;
+  height: 32px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.ex-box div:first-child span {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 11px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #aaaaaa;
+}
+.ex-box div:first-child .favorites-text {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17.14px;
+  color: #676a6c;
+}
+.container main .main-top .add {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  cursor: pointer;
+}

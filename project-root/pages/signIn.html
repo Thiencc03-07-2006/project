@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/signInAndUp.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/nutrium-favicon.ico"
+    />
+  </head>
+  <body>
+    <form class="box">
+      <img class="a-quarter-img" src="../assets/images/Logo.png" alt="" />
+      <p class="text">Please sign in</p>
+      <input class="input-top input" type="email" placeholder="Email address" />
+      <input
+        class="input-bottom input"
+        type="password"
+        placeholder="Password"
+      />
+      <div><input type="checkbox" /><span> Remember me</span></div>
+      <p class="link">
+        Don't have an account, <a href="./signUp.html">click here !</a>
+      </p>
+      <button>Sign in</button>
+      <p class="footer">© 2025 - Rikkei Education</p>
+    </form>
+    <div class="notify error">
+      <div class="header">
+        <div>
+          <span
+            ><img
+              class="a-quarter-img"
+              src="../assets/icons/Error.png"
+              alt="" /></span
+          ><span>Error</span>
+        </div>
+        <span
+          ><button>
+            <img
+              class="a-quarter-img"
+              onclick="closeNotify()"
+              src="../assets/icons/close.png"
+              alt=""
+            /></button
+        ></span>
+      </div>
+      <div class="text">
+        <p>Mật khẩu không được bỏ trống</p>
+        <p>Email không được bỏ trống</p>
+      </div>
+    </div>
+    <!-- <div class="notify submit">
+      <div class="header">
+        <div>
+          <img
+            class="a-quarter-img"
+            src="../assets/icons/Submit.png"
+            alt=""
+          /><span>Đăng nhập thành công</span>
+        </div>
+      </div>
+    </div> -->
+    <script src="../js/index.js"></script>
+    <script src="../js/signln.js"></script>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/formSite.css" />
+    <link rel="stylesheet" href="../css/recipesAdd.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/nutrium-favicon.ico"
+    />
+  </head>
+  <body>
+    <div class="all-box">
+      <div class="menu" style="display: none">
+        <header>
+          <img class="a-quarter-img" src="../assets/images/Logo.png" alt="" />
+        </header>
+        <main>
+          <a href="../index.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/home_off.png"
+                alt=""
+              />
+            </div>
+            Homepage</a
+          ><a href="../pages/ingredient.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/food_off.png"
+                alt=""
+              />
+            </div>
+            Foods</a
+          >
+          <a class="now-paper" href="../pages/recipes.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/recipes.png"
+                alt=""
+              />
+            </div>
+            Recipes</a
+          >
+        </main>
+        <footer>
+          <a href="../pages/signIn.html"
+            ><div>
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/person_add.png"
+                alt=""
+              />
+            </div>
+            <p>Sign out</p></a
+          >
+        </footer>
+      </div>
+      <div class="container">
+        <header>
+          <div class="header-top">
+            <button onclick="openMenu()">
+              <img
+                class="a-quarter-img"
+                src="../assets/icons/Menu.png"
+                alt=""
+              />
+            </button>
+            <div>
+              <span>Cường Trần</span>
+              <div class="box"></div>
+            </div>
+          </div>
+          <div class="header-bottom">
+            <p>Recipes</p>
+            <p>Create, check and update recipes</p>
+          </div>
+        </header>
+        <main>
+          <div class="main-content">
+            <div class="main-top">
+              <div class="box-left">
+                <div class="box-top">
+                  <div>
+                    <img
+                      class="a-quarter-img"
+                      src="../assets/icons/pen.png"
+                      alt=""
+                    /><span>My recipes</span>
+                  </div>
+                  <div>
+                    <img
+                      class="a-quarter-img"
+                      src="../assets/icons/heart.png"
+                      alt=""
+                    /><span>0</span>
+                  </div>
+                </div>
+                <div class="box-bottom">
+                  <img
+                    class="a-quarter-img"
+                    src="../assets/icons/new.png"
+                    alt=""
+                  /><span>New category</span>
+                </div>
+              </div>
+              <div class="box-right">
+                <div class="box-top">
+                  <div>
+                    <p>Publish recipe</p>
+                    <p>
+                      Publish your recipe on your website or share it with the
+                      Nutrium community
+                    </p>
+                  </div>
+                  <button>Publish</button>
+                </div>
+                <div class="box-bottom">
+                  <p>Basic information</p>
+                  <p>Check and edit recipe's basic information</p>
+                  <div class="input">
+                    <div class="px41-5">
+                      <label for="">Name</label
+                      ><input type="text" value="Recipe" /><span
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/penGreen.png"
+                          alt=""
+                      /></span>
+                    </div>
+                    <div class="px58">
+                      <label for="">Description</label
+                      ><input type="text" value="" /><span
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/penGreen.png"
+                          alt=""
+                      /></span>
+                    </div>
+                    <div>
+                      <label for="">Total time</label
+                      ><input type="text" value="" /><span
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/penGreen.png"
+                          alt=""
+                      /></span>
+                    </div>
+                    <div>
+                      <label for="">Preparation time</label
+                      ><input type="text" value="" /><span
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/penGreen.png"
+                          alt=""
+                      /></span>
+                    </div>
+                    <div>
+                      <label class="px41-5" for="">Final weight</label
+                      ><input
+                        class="stats"
+                        type="text"
+                        value="201 grams"
+                      /><span
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/penGreen.png"
+                          alt=""
+                      /></span>
+                    </div>
+                    <div>
+                      <label for="">Portions</label
+                      ><input type="text" value="" /><span
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/penGreen.png"
+                          alt=""
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="title">
+              <p>Creation</p>
+              <p>Create the recipe and choose the ingredients</p>
+            </div>
+            <div class="main-bottom">
+              <div class="box-left">
+                <div class="box-top">
+                  <p>Ingredients</p>
+                  <p>Search and add ingredients to the recipe</p>
+                  <div class="mini-box">
+                    <div>
+                      <span class="top-item"
+                        >1 serving of babyfood, water, bottled, GERBER, without
+                        added fluoride (113 g)</span
+                      >
+                      <div>
+                        <span class="add"
+                          ><img
+                            class="a-quarter-img"
+                            src="../assets/icons/addGreen.png"
+                            alt="" /></span
+                        ><input
+                          type="text"
+                          placeholder="Add new food equivalent"
+                        />
+                      </div>
+                    </div>
+                    <span class="delete-item"
+                      ><img
+                        class="a-quarter-img"
+                        src="../assets/icons/delete.png"
+                        alt=""
+                    /></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>
