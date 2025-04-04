@@ -103,13 +103,13 @@
                     /><span>0</span>
                   </div>
                 </div>
-                <div class="box-bottom">
+                <button class="box-bottom">
                   <img
                     class="a-quarter-img"
                     src="../assets/icons/new.png"
                     alt=""
                   /><span>New category</span>
-                </div>
+                </button>
               </div>
               <div class="box-right">
                 <div class="box-top">
@@ -197,31 +197,363 @@
                 <div class="box-top">
                   <p>Ingredients</p>
                   <p>Search and add ingredients to the recipe</p>
-                  <div class="mini-box">
-                    <div>
-                      <span class="top-item"
-                        >1 serving of babyfood, water, bottled, GERBER, without
-                        added fluoride (113 g)</span
-                      >
+                  <div class="content">
+                    <div class="mini-box">
                       <div>
-                        <span class="add"
+                        <span class="top-item"
+                          >1 serving of babyfood, water, bottled, GERBER,
+                          without added fluoride (113 g)</span
+                        >
+                        <div class="bottom-item">
+                          <span class="add"
+                            ><img
+                              class="a-quarter-img"
+                              src="../assets/icons/addGreen.png"
+                              alt="" /></span
+                          ><input
+                            type="text"
+                            placeholder="Add new food equivalent"
+                          />
+                        </div>
+                      </div>
+                      <span class="delete-item"
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/delete.png"
+                          alt=""
+                      /></span>
+                    </div>
+                    <div class="mini-box">
+                      <div>
+                        <span class="top-item"
+                          >1 serving of babyfood, tropical fruit medley (88
+                          g)</span
+                        >
+                        <div class="bottom-item">
+                          <span class="add"
+                            ><img
+                              class="a-quarter-img"
+                              src="../assets/icons/addGreen.png"
+                              alt="" /></span
+                          ><input
+                            type="text"
+                            placeholder="Add new food equivalent"
+                          />
+                        </div>
+                      </div>
+                      <span class="delete-item"
+                        ><img
+                          class="a-quarter-img"
+                          src="../assets/icons/delete.png"
+                          alt=""
+                      /></span>
+                    </div>
+                    <div class="box-list">
+                      <div class="mini-box-list">
+                        <span
+                          onclick="showList()"
+                          style="transform: rotate(180deg)"
                           ><img
                             class="a-quarter-img"
-                            src="../assets/icons/addGreen.png"
+                            src="../assets/icons/keyboard_arrow_up.png"
                             alt="" /></span
-                        ><input
-                          type="text"
-                          placeholder="Add new food equivalent"
-                        />
+                        ><input type="text" placeholder="Add new ingredient" />
+                      </div>
+                      <div class="list" style="display: none">
+                        <div class="top-list">
+                          <input
+                            type="search"
+                            id="search"
+                            placeholder="Search food"
+                          />
+                          <div>
+                            <button>
+                              <img
+                                class="a-quarter-img"
+                                src="../assets/icons/sort.png"
+                                alt=""
+                              />
+                            </button>
+                            <select name="sort" id="sort">
+                              <option value="">Sort by nutrient</option>
+                            </select>
+                          </div>
+                          <select name="filter" id="filter">
+                            <option value="">All databases</option>
+                          </select>
+                        </div>
+                        <table>
+                          <thead>
+                            <tr>
+                              <td>Nutritional Information</td>
+                              <td class="stats">Energy</td>
+                              <td class="stats">Fat</td>
+                              <td class="stats">Carboh…</td>
+                              <td class="stats">Protein</td>
+                              <td></td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div>
+                                  <p>Keto 90 Second Bread</p>
+                                  <p>Community Recipes</p>
+                                </div>
+                                <div>
+                                  <span class="first">1</span
+                                  ><span class="second">portion (87 grams)</span
+                                  ><span class="third">87g</span>
+                                </div>
+                              </td>
+                              <td class="stats">
+                                <span>301</span><span> kcal</span>
+                              </td>
+                              <td class="stats">
+                                <span>27</span><span> g</span>
+                              </td>
+                              <td class="stats">
+                                <span>6</span><span> g</span>
+                              </td>
+                              <td class="stats">
+                                <span>11</span><span> g</span>
+                              </td>
+                              <td class="add">
+                                <img
+                                  class="a-quarter-img"
+                                  src="../assets/icons/addWhite.png"
+                                  alt=""
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div>
+                                  <p>Keto 90 Second Bread</p>
+                                  <p>Community Recipes</p>
+                                </div>
+                                <div>
+                                  <span class="first">1</span
+                                  ><span class="second">portion (87 grams)</span
+                                  ><span class="third">87g</span>
+                                </div>
+                              </td>
+                              <td class="stats">
+                                <span>301</span><span> kcal</span>
+                              </td>
+                              <td class="stats">
+                                <span>27</span><span> g</span>
+                              </td>
+                              <td class="stats">
+                                <span>6</span><span> g</span>
+                              </td>
+                              <td class="stats">
+                                <span>11</span><span> g</span>
+                              </td>
+                              <td class="add">
+                                <img
+                                  class="a-quarter-img"
+                                  src="../assets/icons/addWhite.png"
+                                  alt=""
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="paper-bar">
+                          <button class="now-paper">1</button>
+                          <button>2</button>
+                          <button>3</button>
+                          <button>4</button>
+                          <button>5</button>
+                          <button>
+                            <img
+                              class="a-quarter-img"
+                              src="../assets/icons/3dot.png"
+                              alt=""
+                            />
+                          </button>
+                          <button>
+                            <img
+                              class="a-quarter-img"
+                              src="../assets/icons/next.png"
+                              alt=""
+                            />
+                          </button>
+                          <button>
+                            <img
+                              class="a-quarter-img"
+                              src="../assets/icons/endNext.png"
+                              alt=""
+                            />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                    <span class="delete-item"
+                  </div>
+                </div>
+                <div class="box-bottom">
+                  <p>Cooking method</p>
+                  <p>Give instructions to prepare this recipe</p>
+                  <div>
+                    <label for="">1</label
+                    ><input
+                      type="text"
+                      placeholder="Add new cooking method"
+                    /><span
                       ><img
                         class="a-quarter-img"
-                        src="../assets/icons/delete.png"
+                        src="../assets/icons/penGreen.png"
                         alt=""
                     /></span>
                   </div>
+                </div>
+              </div>
+              <div class="box-right">
+                <div class="box-top">
+                  <p>Global analysis</p>
+                  <p>Energy, macronutrients and fiber distribution</p>
+                  <div class="item">
+                    <span class="left-item">Energy</span
+                    ><span class="right-item"
+                      ><span>40</span><span>kcal</span></span
+                    >
+                  </div>
+                  <div class="box-circle">
+                    <div>
+                      <div class="circle-fat">0g</div>
+                      <p>Fat</p>
+                    </div>
+                    <div>
+                      <div class="circle-carbohydrate">0g</div>
+                      <p>Carbohydrate</p>
+                    </div>
+                    <div>
+                      <div class="circle-protein">0g</div>
+                      <p>Protein</p>
+                    </div>
+                    <div>
+                      <div class="circle-fiber">0g</div>
+                      <p>Fiber</p>
+                    </div>
+                  </div>
+                  <div class="box-top-left">
+                    <img
+                      class="a-quarter-img"
+                      src="../assets/icons/SVG.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="box-mid">
+                  <p>Macronutrients</p>
+                  <p>Macronutrients distribution of the recipe</p>
+                  <canvas
+                    id="macronutrientChart"
+                    style="width: 290px; height: 290px"
+                  ></canvas>
+                </div>
+                <div class="box-bottom">
+                  <p>Micronutrients</p>
+                  <p>Micronutrients distribution of the recipe</p>
+                  <ul>
+                    <li>
+                      <span>Sodium</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Vitamin A</span>
+                      <div><span>4</span><span>ug</span></div>
+                    </li>
+                    <li>
+                      <span>Vitamin B-6</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Vitamin B-12</span>
+                      <div><span>0</span><span>ug</span></div>
+                    </li>
+                    <li>
+                      <span>Vitamin C</span>
+                      <div><span>14</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Vitamin D (D2 + D3)</span>
+                      <div><span>0</span><span>ug</span></div>
+                    </li>
+                    <li>
+                      <span>Vitamin E</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Vitamin K</span>
+                      <div><span>1</span><span>ug</span></div>
+                    </li>
+                    <li>
+                      <span>Sugars</span>
+                      <div><span>9</span><span>g</span></div>
+                    </li>
+                    <li>
+                      <span>Calcium</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Iron</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Magnesium</span>
+                      <div><span>4</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Phosphorus</span>
+                      <div><span>10</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Potassium</span>
+                      <div><span>124</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Zinc</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Copper</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Fluoride</span>
+                      <div><span>49</span><span>ug</span></div>
+                    </li>
+                    <li>
+                      <span>Manganese</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Selenium</span>
+                      <div><span>0</span><span>ug</span></div>
+                    </li>
+                    <li>
+                      <span>Thiamin</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Riboflavin</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Niacin</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Pantothenic acid</span>
+                      <div><span>0</span><span>mg</span></div>
+                    </li>
+                    <li>
+                      <span>Folate, total</span>
+                      <div><span>2</span><span>ug</span></div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -229,6 +561,9 @@
         </main>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/recipesAdd.js"></script>
   </body>
 </html>
