@@ -34,7 +34,7 @@ function showList() {
     list.style.display = "none";
   }
 }
-const dataValues = [2.2, 95.6, 2.2];
+const dataValues = [38.3, 48.9, 12.8];
 const ctx = document.getElementById("macronutrientChart").getContext("2d");
 new Chart(ctx, {
   type: "pie",
@@ -73,3 +73,7 @@ new Chart(ctx, {
   },
   plugins: [ChartDataLabels],
 });
+function autoSizeTextaren(value) {
+  value.style.height = "auto";
+  value.style.height = value.scrollHeight + "px";
+}

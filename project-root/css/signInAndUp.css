@@ -14,7 +14,7 @@
   margin-right: auto;
   color: #212529;
 }
-img {
+.box img {
   display: block;
   margin-bottom: 22.98px;
   margin-left: auto;
@@ -101,11 +101,11 @@ input[type="checkbox"] {
   line-height: 100%;
   letter-spacing: 0px;
   color: #000000;
+  width: 299px;
+  display: none;
 }
 .error {
   background-color: #ffe5e8;
-  width: 299px;
-  height: 106px;
 }
 .submit {
   background-color: #e5fff0;
@@ -140,13 +140,15 @@ input[type="checkbox"] {
   color: #11151f;
 }
 .error button {
-  display: block;
+  display: flex;
   border-radius: 100px;
   height: 24px;
   width: 24px;
   padding: 4px;
   background-color: #ffffff59;
   border: none;
+  align-items: center;
+  justify-content: center;
 }
 .error .text {
   padding-left: 24px;
