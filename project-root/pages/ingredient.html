@@ -74,7 +74,7 @@
               />
             </button>
             <div>
-              <span>Cường Trần</span>
+              <span id="nowUsername"></span>
               <div class="box"></div>
             </div>
           </div>
@@ -91,19 +91,39 @@
               <div class="input">
                 <input type="search" id="search" placeholder="Search food" />
                 <div>
-                  <button>
+                  <button onclick="changeSort()">
                     <img
+                      id="sort"
                       class="a-quarter-img"
                       src="../assets/icons/sort.png"
                       alt=""
                     />
                   </button>
-                  <select name="sort" id="sort">
+                  <select name="sort">
                     <option value="">Sort by nutrient</option>
+                    <option value="energy">Energy</option>
+                    <option value="fat">Fat</option>
+                    <option value="carbohydrate">Carbohydrate</option>
+                    <option value="protein">Protein</option>
                   </select>
                 </div>
                 <select name="filter" id="filter">
                   <option value="">Category</option>
+                  <option value="Vegetables and Vegetable Products">
+                    Vegetables and Vegetable Products
+                  </option>
+                  <option value="Vegetarian dishes">Vegetarian dishes</option>
+                  <option value="Lean & Green">Lean & Green</option>
+                  <option value="Low Added Sugar">Low Added Sugar</option>
+                  <option value="Diabetic Friendly">Diabetic Friendly</option>
+                  <option value="HBP Friendly">HBP Friendly</option>
+                  <option value="Breakfast and snacks">
+                    Breakfast and snacks
+                  </option>
+                  <option value="Desserts">Desserts</option>
+                  <option value="Chicken Dishes">Chicken Dishes</option>
+                  <option value="Salads">Salads</option>
+                  <option value="Meat dishes">Meat dishes</option>
                 </select>
               </div>
             </div>
@@ -180,19 +200,23 @@
                 </div>
               </div>
               <div class="paper-bar">
-                <button class="now-paper">1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>
-                  <img
-                    class="a-quarter-img"
-                    src="../assets/icons/3dot.png"
-                    alt=""
-                  />
-                </button>
-                <button>
+                <div class="mid-paper-bar">
+                  <button class="now-paper">1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>4</button>
+                  <button>5</button>
+                  <button>
+                    <img
+                      class="a-quarter-img"
+                      src="../assets/icons/3dot.png"
+                      alt=""
+                    />
+                  </button>
+                </div>
+                <button
+                  onclick="nowPaper<Math.ceil(food.length / maxPaper)-1?renderPaperBar(nowPaper+2):null"
+                >
                   <img
                     class="a-quarter-img"
                     src="../assets/icons/next.png"

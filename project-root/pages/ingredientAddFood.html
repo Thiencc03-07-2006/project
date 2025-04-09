@@ -20,14 +20,29 @@
     <main>
       <div class="box-1">
         <div class="row">
-          <div><label for="">Name</label><input type="text" /></div>
-          <div><label for="">Source</label><span>My food</span></div>
+          <div>
+            <label for="">Name</label><input type="text" class="name" />
+          </div>
+          <div><label for="">Source</label><span id="nowUsername"></span></div>
         </div>
         <div class="row">
           <div>
             <label for="">Category</label
-            ><select name="" id="">
-              <option value="">Select the food group</option>
+            ><select class="category" name="" id="" multiple>
+              <option hidden value="">Select the food group</option>
+              <option value="Vegetables and Vegetable Products">
+                Vegetables and Vegetable Products
+              </option>
+              <option value="Vegetarian dishes">Vegetarian dishes</option>
+              <option value="Lean & Green">Lean & Green</option>
+              <option value="Low Added Sugar">Low Added Sugar</option>
+              <option value="Diabetic Friendly">Diabetic Friendly</option>
+              <option value="HBP Friendly">HBP Friendly</option>
+              <option value="Breakfast and snacks">Breakfast and snacks</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Chicken Dishes">Chicken Dishes</option>
+              <option value="Salads">Salads</option>
+              <option value="Meat dishes">Meat dishes</option>
             </select>
           </div>
           <div>
@@ -41,19 +56,29 @@
       <div class="box-2">
         <div class="row">
           <div class="col">
-            <label for="">Energy</label><input type="text" /><span>kcal</span>
+            <label for="">Energy</label
+            ><input class="energy" type="number" step="any" min="0" /><span
+              >kcal</span
+            >
           </div>
           <div class="col">
-            <label for="">Fat</label><input type="text" /><span>g</span>
+            <label for="">Fat</label
+            ><input class="fat" type="number" step="any" min="0" /><span
+              >g</span
+            >
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <label for="">Carbohydrate</label><input type="text" />
+            <label for="">Carbohydrate</label
+            ><input class="carbohydrate" type="number" step="any" min="0" />
             <span>g</span>
           </div>
           <div class="col">
-            <label for="">Protein</label><input type="text" /><span>g</span>
+            <label for="">Protein</label
+            ><input class="protein" type="number" step="any" min="0" /><span
+              >g</span
+            >
           </div>
         </div>
       </div>
@@ -61,162 +86,281 @@
       <div class="box-3">
         <div class="row">
           <div class="col">
-            <label for="">Cholestrol</label><input type="text" /><span>mg</span>
+            <label for="">Cholestrol</label
+            ><input type="number" step="any" min="0" class="cholestrol" /><span
+              >mg</span
+            >
           </div>
           <div class="col">
-            <label for="">Fiber</label><input type="text" /><span>g</span>
+            <label for="">Fiber</label
+            ><input type="number" step="any" min="0" class="fiber" /><span
+              >g</span
+            >
           </div>
           <div class="col">
-            <label for="">Sodium</label><input type="text" /><span>mg</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Water</label><input type="text" /><span>g</span>
-          </div>
-          <div class="col">
-            <label for="">Vitamin A</label><input type="text" /><span>ug</span>
-          </div>
-          <div class="col">
-            <label for="">Vitamin B-6</label><input type="text" /><span
+            <label for="">Sodium</label
+            ><input type="number" step="any" min="0" class="sodium" /><span
               >mg</span
             >
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <label for="">Vitamin B-12</label><input type="text" /><span
+            <label for="">Water</label
+            ><input type="number" step="any" min="0" class="water" /><span
+              >g</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Vitamin A</label
+            ><input type="number" step="any" min="0" class="vitamin-a" /><span
               >ug</span
             >
           </div>
           <div class="col">
-            <label for="">Vitamin C</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Vitamin D (D2 + D3)</label><input type="text" /><span
-              >ug</span
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Vitamin E</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Vitamin K</label><input type="text" /><span>ug</span>
-          </div>
-          <div class="col">
-            <label for="">Starch</label><input type="text" /><span>g</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Lactose</label><input type="text" /><span>g</span>
-          </div>
-          <div class="col">
-            <label for="">Alcohol</label><input type="text" /><span>g</span>
-          </div>
-          <div class="col">
-            <label for="">Caffeine</label><input type="text" /><span>mg</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Sugars</label><input type="text" /><span>g</span>
-          </div>
-          <div class="col">
-            <label for="">Calcium</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Iron</label><input type="text" /><span>mg</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Magnesium</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Phosphorus</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Potassium</label><input type="text" /><span>mg</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Zinc</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Copper</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Fluoride</label><input type="text" /><span>ug</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Manganese</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Selenium</label><input type="text" /><span>g</span>
-          </div>
-          <div class="col">
-            <label for="">Thiamin</label><input type="text" /><span>mg</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label for="">Riboflavin</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Niacin</label><input type="text" /><span>mg</span>
-          </div>
-          <div class="col">
-            <label for="">Pantothenic acit</label><input type="text" /><span
+            <label for="">Vitamin B-6</label
+            ><input type="number" step="any" min="0" class="vitamin-b-6" /><span
               >mg</span
             >
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <label for="">Folate, total</label><input type="text" /><span
+            <label for="">Vitamin B-12</label
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="vitamin-b-12"
+            /><span>ug</span>
+          </div>
+          <div class="col">
+            <label for="">Vitamin C</label
+            ><input type="number" step="any" min="0" class="vitamin-c" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Vitamin D (D2 + D3)</label
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="vitamin-d-d2-d3"
+            /><span>ug</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Vitamin E</label
+            ><input type="number" step="any" min="0" class="vitamin-e" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Vitamin K</label
+            ><input type="number" step="any" min="0" class="vitamin-k" /><span
               >ug</span
             >
           </div>
           <div class="col">
-            <label for="">Folic acid</label><input type="text" /><span>ug</span>
+            <label for="">Starch</label
+            ><input type="number" step="any" min="0" class="starch" /><span
+              >g</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Lactose</label
+            ><input type="number" step="any" min="0" class="lactose" /><span
+              >g</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Alcohol</label
+            ><input type="number" step="any" min="0" class="alcohol" /><span
+              >g</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Caffeine</label
+            ><input type="number" step="any" min="0" class="caffeine" /><span
+              >mg</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Sugars</label
+            ><input type="number" step="any" min="0" class="sugars" /><span
+              >g</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Calcium</label
+            ><input type="number" step="any" min="0" class="calcium" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Iron</label
+            ><input type="number" step="any" min="0" class="iron" /><span
+              >mg</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Magnesium</label
+            ><input type="number" step="any" min="0" class="magnesium" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Phosphorus</label
+            ><input type="number" step="any" min="0" class="phosphorus" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Potassium</label
+            ><input type="number" step="any" min="0" class="potassium" /><span
+              >mg</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Zinc</label
+            ><input type="number" step="any" min="0" class="zinc" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Copper</label
+            ><input type="number" step="any" min="0" class="copper" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Fluoride</label
+            ><input type="number" step="any" min="0" class="fluoride" /><span
+              >ug</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Manganese</label
+            ><input type="number" step="any" min="0" class="manganese" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Selenium</label
+            ><input type="number" step="any" min="0" class="selenium" /><span
+              >g</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Thiamin</label
+            ><input type="number" step="any" min="0" class="thiamin" /><span
+              >mg</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Riboflavin</label
+            ><input type="number" step="any" min="0" class="riboflavin" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Niacin</label
+            ><input type="number" step="any" min="0" class="niacin" /><span
+              >mg</span
+            >
+          </div>
+          <div class="col">
+            <label for="">Pantothenic acit</label
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="pantothenic-acit"
+            /><span>mg</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="">Folate, total</label
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="folate-total"
+            /><span>ug</span>
+          </div>
+          <div class="col">
+            <label for="">Folic acid</label
+            ><input type="number" step="any" min="0" class="folic-acid" /><span
+              >ug</span
+            >
           </div>
           <div class="col">
             <label for="">Fatty acids, total trans</label
-            ><input type="text" /><span>g</span>
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="fatty-acids-total-trans"
+            /><span>g</span>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <label for="">Fatty acids, total saturated</label
-            ><input type="text" /><span>g</span>
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="fatty-acids-total-saturated"
+            /><span>g</span>
           </div>
           <div class="col">
             <label for="">Fatty acids, total monounsaturated</label
-            ><input type="text" /><span>g</span>
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="fatty-acids-total-monounsaturated"
+            /><span>g</span>
           </div>
           <div class="col">
             <label for="">Fatty acids, total polyunsaturated</label
-            ><input type="text" /><span>g</span>
+            ><input
+              type="number"
+              step="any"
+              min="0"
+              class="fatty-acids-total-polyunsaturated"
+            /><span>g</span>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <label for="">Chloride</label><input type="text" /><span>mg</span>
+            <label for="">Chloride</label
+            ><input type="number" step="any" min="0" class="chloride" /><span
+              >mg</span
+            >
           </div>
         </div>
       </div>
     </main>
     <footer>
       <button onclick="location.href=`./ingredient.html`">Cancel</button
-      ><button onclick="location.href=`./ingredient.html`">
-        Save and close
-      </button>
+      ><button onclick="addFood()">Save and close</button>
     </footer>
     <button class="close" onclick="location.href=`./ingredient.html`">×</button>
     <script src="../js/index.js"></script>

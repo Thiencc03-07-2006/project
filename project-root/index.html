@@ -66,7 +66,7 @@
               <img class="a-quarter-img" src="./assets/icons/Menu.png" alt="" />
             </button>
             <div>
-              <span>Cường Trần</span>
+              <span id="nowUsername"></span>
               <div class="box"></div>
             </div>
           </div>
@@ -83,19 +83,39 @@
               <div class="input">
                 <input type="search" id="search" placeholder="Search food" />
                 <div>
-                  <button>
+                  <button onclick="changeSort()">
                     <img
+                      id="sort"
                       class="a-quarter-img"
                       src="./assets/icons/sort.png"
                       alt=""
                     />
                   </button>
-                  <select name="sort" id="sort">
+                  <select name="sort">
                     <option value="">Sort by nutrient</option>
+                    <option value="energy">Energy</option>
+                    <option value="fat">Fat</option>
+                    <option value="carbohydrate">Carbohydrate</option>
+                    <option value="protein">Protein</option>
                   </select>
                 </div>
                 <select name="filter" id="filter">
                   <option value="">Category</option>
+                  <option value="Vegetables and Vegetable Products">
+                    Vegetables and Vegetable Products
+                  </option>
+                  <option value="Vegetarian dishes">Vegetarian dishes</option>
+                  <option value="Lean & Green">Lean & Green</option>
+                  <option value="Low Added Sugar">Low Added Sugar</option>
+                  <option value="Diabetic Friendly">Diabetic Friendly</option>
+                  <option value="HBP Friendly">HBP Friendly</option>
+                  <option value="Breakfast and snacks">
+                    Breakfast and snacks
+                  </option>
+                  <option value="Desserts">Desserts</option>
+                  <option value="Chicken Dishes">Chicken Dishes</option>
+                  <option value="Salads">Salads</option>
+                  <option value="Meat dishes">Meat dishes</option>
                 </select>
               </div>
             </div>
@@ -154,68 +174,16 @@
                   </div>
                 </div>
               </div>
-              <div class="box">
-                <div>
-                  <div>
-                    <img
-                      class="a-quarter-img"
-                      src="./assets/icons/group.png"
-                      alt=""
-                    />
-                    <p>Community Recipes</p>
-                  </div>
-                </div>
-                <div class="box-right">
-                  <p class="text-1">
-                    Turmeric Roasted Cauliflower Salad (lowfodmap)
-                  </p>
-                  <div class="text-2">
-                    <p>Joana Jardim</p>
-                    <div class="box-like">
-                      <img
-                        class="a-quarter-img"
-                        src="./assets/icons/heart.png"
-                        alt=""
-                      />
-                      <p>37</p>
-                    </div>
-                  </div>
-                  <div class="text-3">
-                    <img
-                      class="a-quarter-img"
-                      src="./assets/icons/Vector.png"
-                      alt=""
-                    />
-                    <p>Vegetarian dishes</p>
-                  </div>
-                  <div class="box-info">
-                    <table>
-                      <tr>
-                        <td class="box-info-left">by</td>
-                        <td>Energy</td>
-                        <td>Fat</td>
-                        <td>Carbohydrate</td>
-                        <td>Protein</td>
-                      </tr>
-                      <tr>
-                        <td class="box-info-left">100g</td>
-                        <td class="stats">10 kcal</td>
-                        <td class="stats">20 g</td>
-                        <td class="stats">3 g</td>
-                        <td class="stats">50 g</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="paper-bar">
-                <button>
-                  <img
-                    class="a-quarter-img"
-                    src="./assets/icons/prev.png"
-                    alt=""
-                  />
-                </button>
+            </div>
+            <div class="paper-bar">
+              <button onclick="nowPaper>0?renderPaperBar(nowPaper):null">
+                <img
+                  class="a-quarter-img"
+                  src="./assets/icons/prev.png"
+                  alt=""
+                />
+              </button>
+              <div class="mid-paper-bar">
                 <button class="now-paper">1</button>
                 <button>2</button>
                 <button>3</button>
@@ -223,19 +191,22 @@
                 <button>...</button>
                 <button>1037</button>
                 <button>1038</button>
-                <button>
-                  <img
-                    class="a-quarter-img"
-                    src="./assets/icons/next.png"
-                    alt=""
-                  />
-                </button>
               </div>
+              <button
+                onclick="nowPaper<Math.ceil(food.length / maxPaper)-1?renderPaperBar(nowPaper+2):null"
+              >
+                <img
+                  class="a-quarter-img"
+                  src="./assets/icons/next.png"
+                  alt=""
+                />
+              </button>
             </div>
           </div>
         </main>
       </div>
     </div>
     <script src="./js/index.js"></script>
+    <script src="./js/home.js"></script>
   </body>
 </html>
