@@ -44,13 +44,80 @@ let fattyAcidsPolyunsaturated = document.querySelector(
 let chloride = document.querySelector(".chloride");
 /**/
 let name = document.querySelector(".name");
-let category;
+let source = document.querySelector(".source");
+let category = document.querySelector(".category");
 let energy = document.querySelector(".energy");
 let fat = document.querySelector(".fat");
 let carbohydrate = document.querySelector(".carbohydrate");
 let protein = document.querySelector(".protein");
-let id;
-function addFood() {
+let nowEditFood = JSON.parse(sessionStorage.getItem("nowEditFood"));
+cholesterol.value = nowEditFood.micronutrients.cholesterol;
+fiber.value = nowEditFood.micronutrients.fiber;
+sodium.value = nowEditFood.micronutrients.sodium;
+water.value = nowEditFood.micronutrients.water;
+vitaminA.value = nowEditFood.micronutrients.vitaminA;
+vitaminB6.value = nowEditFood.micronutrients.vitaminB6;
+vitaminB12.value = nowEditFood.micronutrients.vitaminB12;
+vitaminC.value = nowEditFood.micronutrients.vitaminC;
+vitaminD.value = nowEditFood.micronutrients.vitaminD;
+vitaminE.value = nowEditFood.micronutrients.vitaminE;
+vitaminK.value = nowEditFood.micronutrients.vitaminK;
+starch.value = nowEditFood.micronutrients.starch;
+lactose.value = nowEditFood.micronutrients.lactose;
+alcohol.value = nowEditFood.micronutrients.alcohol;
+caffeine.value = nowEditFood.micronutrients.caffeine;
+sugars.value = nowEditFood.micronutrients.sugars;
+calcium.value = nowEditFood.micronutrients.calcium;
+iron.value = nowEditFood.micronutrients.iron;
+magnesium.value = nowEditFood.micronutrients.magnesium;
+phosphorus.value = nowEditFood.micronutrients.phosphorus;
+potassium.value = nowEditFood.micronutrients.potassium;
+zinc.value = nowEditFood.micronutrients.zinc;
+copper.value = nowEditFood.micronutrients.copper;
+fluoride.value = nowEditFood.micronutrients.fluoride;
+manganese.value = nowEditFood.micronutrients.manganese;
+selenium.value = nowEditFood.micronutrients.selenium;
+thiamin.value = nowEditFood.micronutrients.thiamin;
+riboflavin.value = nowEditFood.micronutrients.riboflavin;
+niacin.value = nowEditFood.micronutrients.niacin;
+pantothenicAcid.value = nowEditFood.micronutrients.pantothenicAcid;
+folateTotal.value = nowEditFood.micronutrients.folateTotal;
+folicAcid.value = nowEditFood.micronutrients.folicAcid;
+fattyAcidsTrans.value = nowEditFood.micronutrients.fattyAcidsTrans;
+fattyAcidsSaturated.value = nowEditFood.micronutrients.fattyAcidsSaturated;
+fattyAcidsMonounsaturated.value =
+  nowEditFood.micronutrients.fattyAcidsMonounsaturated;
+fattyAcidsPolyunsaturated.value =
+  nowEditFood.micronutrients.fattyAcidsPolyunsaturated;
+chloride.value = nowEditFood.micronutrients.chloride;
+/**/
+name.value = nowEditFood.name;
+source.textContent = nowEditFood.source;
+let textCategory = document.querySelector(".textCategory");
+textCategory.textContent = nowEditFood.category;
+energy.value = nowEditFood.macronutrients.energy;
+fat.value = nowEditFood.macronutrients.fat;
+carbohydrate.value = nowEditFood.macronutrients.carbohydrate;
+protein.value = nowEditFood.macronutrients.protein;
+let listSelect = document.querySelectorAll(".category option");
+listSelect.forEach((value) => (value.style.display = "none"));
+listSelect[0].style.display = "block";
+document.querySelector(".category").multiple = false;
+let fistTime = true;
+function openSelect() {
+  listSelect.forEach((value) => (value.style.display = "block"));
+  listSelect[0].style.display = "none";
+  document.querySelector(".category").multiple = true;
+  if (fistTime) {
+    for (let option of category.options) {
+      if (nowEditFood.category.includes(option.value)) {
+        option.selected = true;
+      }
+    }
+    fistTime = false;
+  }
+}
+function saveFood() {
   category = Array.from(document.querySelector(".category").selectedOptions)
     .map((value) => value.value)
     .filter((value) => value !== "bug1");
@@ -62,13 +129,10 @@ function addFood() {
     carbohydrate.value >= 0 &&
     protein.value >= 0
   ) {
-    do {
-      id = Math.ceil(Math.random() * 999999);
-    } while (food.some((value) => value.id === id));
-    food.push({
-      id: id,
+    nowEditFood = {
+      id: nowEditFood.id,
       name: name.value,
-      source: nowUser.username,
+      source: source.textContent,
       category: category.join(", "),
       quantity: "100g",
       macronutrients: {
@@ -125,20 +189,9 @@ function addFood() {
             : fattyAcidsPolyunsaturated.value,
         chloride: chloride.value === "" ? null : chloride.value,
       },
-    });
+    };
+    food[food.findIndex((value) => value.id === nowEditFood.id)] = nowEditFood;
     localStorage.setItem("food", JSON.stringify(food));
-    resetForm();
-    listSelect.forEach((value) => (value.style.display = "none"));
-    listSelect[0].style.display = "block";
-    document.querySelector(".category").multiple = false;
+    location.href = "../pages/ingredient.html";
   }
-}
-let listSelect = document.querySelectorAll(".category option");
-listSelect.forEach((value) => (value.style.display = "none"));
-listSelect[0].style.display = "block";
-document.querySelector(".category").multiple = false;
-function openSelect() {
-  listSelect.forEach((value) => (value.style.display = "block"));
-  listSelect[0].style.display = "none";
-  document.querySelector(".category").multiple = true;
 }

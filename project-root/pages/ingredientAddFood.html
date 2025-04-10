@@ -27,9 +27,15 @@
         </div>
         <div class="row">
           <div>
-            <label for="">Category</label
-            ><select class="category" name="" id="" multiple>
-              <option hidden value="">Select the food group</option>
+            <label for="">Category</label>
+            <select
+              class="category"
+              name=""
+              id=""
+              multiple
+              onclick="openSelect()"
+            >
+              <option value="bug1">Select the food group</option>
               <option value="Vegetables and Vegetable Products">
                 Vegetables and Vegetable Products
               </option>
@@ -289,7 +295,7 @@
               type="number"
               step="any"
               min="0"
-              class="pantothenic-acit"
+              class="pantothenic-acid"
             /><span>mg</span>
           </div>
         </div>
@@ -364,5 +370,6 @@
     </footer>
     <button class="close" onclick="location.href=`./ingredient.html`">×</button>
     <script src="../js/index.js"></script>
+    <script src="../js/ingredientAddFood.js"></script>
   </body>
 </html>

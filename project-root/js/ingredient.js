@@ -1,9 +1,4 @@
-let box = document.querySelectorAll(".list .box:not(:has(a))");
-box.forEach((value) =>
-  value.addEventListener("click", function () {
-    location.href = `./ingredientEdit.html`;
-  })
-);
+let box;
 /*js*/
 let filterCategory = document.querySelector("select[name=filter]");
 let cloneFood = [];
@@ -23,7 +18,7 @@ function render(arr) {
     arr
       .slice(nowPaper * maxPaper, (nowPaper + 1) * maxPaper)
       .map(
-        (value) => `<div class="box">
+        (value) => `<div class="box" onclick="setNowUserEdit(${value.id})">
                   <div>
                     <p>${value.name}</p>
                     <p>${value.source}</p>
@@ -54,6 +49,12 @@ function render(arr) {
                     />Create food</a
                   >
                 </div>`;
+  box = document.querySelectorAll(".list .box:not(:has(a))");
+  box.forEach((value) =>
+    value.addEventListener("click", function () {
+      location.href = `./ingredientEdit.html`;
+    })
+  );
   loadImg();
 }
 let search = document.querySelector(`input[type = "search"]`);
@@ -72,9 +73,9 @@ sort.addEventListener("change", function () {
 });
 function sortAction() {
   if (sort.value === "") {
-    food.sort((a, b) => a.name.localeCompare(b.name));
+    selectRender().sort((a, b) => a.name.localeCompare(b.name));
   } else {
-    food.sort(
+    selectRender().sort(
       (a, b) =>
         (a.macronutrients[sort.value] - b.macronutrients[sort.value]) *
         changeSortNow
@@ -136,4 +137,10 @@ function renderPaperBar(value) {
         )
       )
     : render(selectRender());
+}
+function setNowUserEdit(nowIdEdit) {
+  sessionStorage.setItem(
+    "nowEditFood",
+    JSON.stringify(food[food.findIndex((value) => value.id === nowIdEdit)])
+  );
 }

@@ -89,9 +89,9 @@ sort.addEventListener("change", function () {
 });
 function sortAction() {
   if (sort.value === "") {
-    food.sort((a, b) => a.name.localeCompare(b.name));
+    selectRender().sort((a, b) => a.name.localeCompare(b.name));
   } else {
-    food.sort(
+    selectRender().sort(
       (a, b) =>
         (a.macronutrients[sort.value] - b.macronutrients[sort.value]) *
         changeSortNow
