@@ -51,7 +51,7 @@
           >
         </main>
         <footer>
-          <a href="../pages/signIn.html"
+          <a onclick="signOut()" href="../pages/signIn.html"
             ><div>
               <img
                 class="a-quarter-img"
@@ -74,7 +74,7 @@
               />
             </button>
             <div>
-              <span>Cường Trần</span>
+              <span id="nowUsername">Cường Trần</span>
               <div class="box"></div>
             </div>
           </div>
@@ -98,12 +98,31 @@
                       alt=""
                     />
                   </button>
-                  <select name="sort" id="sort">
+                  <select name="sort">
                     <option value="">Sort by nutrient</option>
+                    <option value="energy">Energy</option>
+                    <option value="fat">Fat</option>
+                    <option value="carbohydrate">Carbohydrate</option>
+                    <option value="protein">Protein</option>
                   </select>
                 </div>
                 <select name="filter" id="filter">
                   <option value="">Category</option>
+                  <option value="Vegetables and Vegetable Products">
+                    Vegetables and Vegetable Products
+                  </option>
+                  <option value="Vegetarian dishes">Vegetarian dishes</option>
+                  <option value="Lean & Green">Lean & Green</option>
+                  <option value="Low Added Sugar">Low Added Sugar</option>
+                  <option value="Diabetic Friendly">Diabetic Friendly</option>
+                  <option value="HBP Friendly">HBP Friendly</option>
+                  <option value="Breakfast and snacks">
+                    Breakfast and snacks
+                  </option>
+                  <option value="Desserts">Desserts</option>
+                  <option value="Chicken Dishes">Chicken Dishes</option>
+                  <option value="Salads">Salads</option>
+                  <option value="Meat dishes">Meat dishes</option>
                 </select>
               </div>
               <img
@@ -123,7 +142,10 @@
               </div>
               <div>
                 <label class="custom-checkbox">
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    onclick="myRecipesFilter=this.checked"
+                  />
                   <span class="checkmark"></span>
                 </label>
                 <img
@@ -242,14 +264,16 @@
                   </div>
                 </div>
               </div>
-              <div class="paper-bar">
-                <button>
-                  <img
-                    class="a-quarter-img"
-                    src="../assets/icons/prev.png"
-                    alt=""
-                  />
-                </button>
+            </div>
+            <div class="paper-bar">
+              <button onclick="nowPaper>0?renderPaperBar(nowPaper):null">
+                <img
+                  class="a-quarter-img"
+                  src="../assets/icons/prev.png"
+                  alt=""
+                />
+              </button>
+              <div class="mid-paper-bar">
                 <button class="now-paper">1</button>
                 <button>2</button>
                 <button>3</button>
@@ -257,19 +281,22 @@
                 <button>...</button>
                 <button>1037</button>
                 <button>1038</button>
-                <button>
-                  <img
-                    class="a-quarter-img"
-                    src="../assets/icons/next.png"
-                    alt=""
-                  />
-                </button>
               </div>
+              <button
+                onclick="nowPaper<Math.ceil(food.length / maxPaper)-1?renderPaperBar(nowPaper+2):null"
+              >
+                <img
+                  class="a-quarter-img"
+                  src="../assets/icons/next.png"
+                  alt=""
+                />
+              </button>
             </div>
           </div>
         </main>
       </div>
     </div>
     <script src="../js/index.js"></script>
+    <script src="../js/recipes.js"></script>
   </body>
 </html>

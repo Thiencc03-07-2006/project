@@ -51,7 +51,7 @@
           >
         </main>
         <footer>
-          <a href="../pages/signIn.html"
+          <a onclick="signOut()" href="../pages/signIn.html"
             ><div>
               <img
                 class="a-quarter-img"
@@ -74,7 +74,7 @@
               />
             </button>
             <div>
-              <span>Cường Trần</span>
+              <span id="nowUsername">Cường Trần</span>
               <div class="box"></div>
             </div>
           </div>
@@ -108,8 +108,25 @@
                     class="a-quarter-img"
                     src="../assets/icons/new.png"
                     alt=""
-                  /><span>New category</span>
+                  /><span class="category">New category</span>
                 </button>
+                <select name="" id="">
+                  <option value="Vegetables and Vegetable Products">
+                    Vegetables and Vegetable Products
+                  </option>
+                  <option value="Vegetarian dishes">Vegetarian dishes</option>
+                  <option value="Lean & Green">Lean & Green</option>
+                  <option value="Low Added Sugar">Low Added Sugar</option>
+                  <option value="Diabetic Friendly">Diabetic Friendly</option>
+                  <option value="HBP Friendly">HBP Friendly</option>
+                  <option value="Breakfast and snacks">
+                    Breakfast and snacks
+                  </option>
+                  <option value="Desserts">Desserts</option>
+                  <option value="Chicken Dishes">Chicken Dishes</option>
+                  <option value="Salads">Salads</option>
+                  <option value="Meat dishes">Meat dishes</option>
+                </select>
               </div>
               <div class="box-right">
                 <div class="box-top">
@@ -128,7 +145,11 @@
                   <div class="input">
                     <div class="px41-5">
                       <label for="">Name</label
-                      ><input type="text" value="Recipe" /><span
+                      ><input
+                        class="name"
+                        type="text"
+                        placeholder="Recipe"
+                      /><span
                         ><img
                           class="a-quarter-img"
                           src="../assets/icons/penGreen.png"
@@ -137,7 +158,7 @@
                     </div>
                     <div class="px58">
                       <label for="">Description</label
-                      ><input type="text" value="" /><span
+                      ><input class="description" type="text" value="" /><span
                         ><img
                           class="a-quarter-img"
                           src="../assets/icons/penGreen.png"
@@ -146,7 +167,12 @@
                     </div>
                     <div>
                       <label for="">Total time</label
-                      ><input type="text" value="" /><span
+                      ><input
+                        class="total-time"
+                        type="text"
+                        value=""
+                        placeholder="00:00"
+                      /><span
                         ><img
                           class="a-quarter-img"
                           src="../assets/icons/penGreen.png"
@@ -155,7 +181,12 @@
                     </div>
                     <div>
                       <label for="">Preparation time</label
-                      ><input type="text" value="" /><span
+                      ><input
+                        class="preparation-time"
+                        type="text"
+                        value=""
+                        placeholder="00:00"
+                      /><span
                         ><img
                           class="a-quarter-img"
                           src="../assets/icons/penGreen.png"
@@ -165,8 +196,9 @@
                     <div>
                       <label class="px41-5" for="">Final weight</label
                       ><input
-                        class="stats"
+                        class="stats final-weight"
                         type="text"
+                        readonly
                         value="201 grams"
                       /><span
                         ><img
@@ -177,7 +209,7 @@
                     </div>
                     <div>
                       <label for="">Portions</label
-                      ><input type="text" value="" /><span
+                      ><input class="portions" type="number" value="" /><span
                         ><img
                           class="a-quarter-img"
                           src="../assets/icons/penGreen.png"
@@ -198,55 +230,32 @@
                   <p>Ingredients</p>
                   <p>Search and add ingredients to the recipe</p>
                   <div class="content">
-                    <div class="mini-box">
-                      <div>
-                        <span class="top-item"
-                          >1 serving of babyfood, water, bottled, GERBER,
-                          without added fluoride (113 g)</span
-                        >
-                        <div class="bottom-item">
-                          <span class="add"
-                            ><img
-                              class="a-quarter-img"
-                              src="../assets/icons/addGreen.png"
-                              alt="" /></span
-                          ><input
-                            type="text"
-                            placeholder="Add new food equivalent"
-                          />
+                    <div class="box-list">
+                      <div class="mini-box">
+                        <div>
+                          <span class="top-item"
+                            >1 serving of babyfood, water, bottled, GERBER,
+                            without added fluoride (113 g)</span
+                          >
+                          <div class="bottom-item">
+                            <span class="add"
+                              ><img
+                                class="a-quarter-img"
+                                src="../assets/icons/addGreen.png"
+                                alt="" /></span
+                            ><input
+                              type="text"
+                              placeholder="Add new food equivalent"
+                            />
+                          </div>
                         </div>
+                        <span class="delete-item"
+                          ><img
+                            class="a-quarter-img"
+                            src="../assets/icons/delete.png"
+                            alt=""
+                        /></span>
                       </div>
-                      <span class="delete-item"
-                        ><img
-                          class="a-quarter-img"
-                          src="../assets/icons/delete.png"
-                          alt=""
-                      /></span>
-                    </div>
-                    <div class="mini-box">
-                      <div>
-                        <span class="top-item"
-                          >1 serving of babyfood, tropical fruit medley (88
-                          g)</span
-                        >
-                        <div class="bottom-item">
-                          <span class="add"
-                            ><img
-                              class="a-quarter-img"
-                              src="../assets/icons/addGreen.png"
-                              alt="" /></span
-                          ><input
-                            type="text"
-                            placeholder="Add new food equivalent"
-                          />
-                        </div>
-                      </div>
-                      <span class="delete-item"
-                        ><img
-                          class="a-quarter-img"
-                          src="../assets/icons/delete.png"
-                          alt=""
-                      /></span>
                     </div>
                     <div class="box-list">
                       <div class="mini-box-list">
@@ -257,7 +266,11 @@
                             class="a-quarter-img"
                             src="../assets/icons/keyboard_arrow_up.png"
                             alt="" /></span
-                        ><input type="text" placeholder="Add new ingredient" />
+                        ><input
+                          type="text"
+                          readonly
+                          placeholder="Add new ingredient"
+                        />
                       </div>
                       <div class="list" style="display: none">
                         <div class="top-list">
@@ -267,19 +280,47 @@
                             placeholder="Search food"
                           />
                           <div>
-                            <button>
+                            <button onclick="changeSort()">
                               <img
+                                id="sort"
                                 class="a-quarter-img"
                                 src="../assets/icons/sort.png"
                                 alt=""
                               />
                             </button>
-                            <select name="sort" id="sort">
+                            <select name="sort">
                               <option value="">Sort by nutrient</option>
+                              <option value="energy">Energy</option>
+                              <option value="fat">Fat</option>
+                              <option value="carbohydrate">Carbohydrate</option>
+                              <option value="protein">Protein</option>
                             </select>
                           </div>
                           <select name="filter" id="filter">
                             <option value="">All databases</option>
+                            <option value="Vegetables and Vegetable Products">
+                              Vegetables and Vegetable Products
+                            </option>
+                            <option value="Vegetarian dishes">
+                              Vegetarian dishes
+                            </option>
+                            <option value="Lean & Green">Lean & Green</option>
+                            <option value="Low Added Sugar">
+                              Low Added Sugar
+                            </option>
+                            <option value="Diabetic Friendly">
+                              Diabetic Friendly
+                            </option>
+                            <option value="HBP Friendly">HBP Friendly</option>
+                            <option value="Breakfast and snacks">
+                              Breakfast and snacks
+                            </option>
+                            <option value="Desserts">Desserts</option>
+                            <option value="Chicken Dishes">
+                              Chicken Dishes
+                            </option>
+                            <option value="Salads">Salads</option>
+                            <option value="Meat dishes">Meat dishes</option>
                           </select>
                         </div>
                         <table>
@@ -326,61 +367,28 @@
                                 />
                               </td>
                             </tr>
-                            <tr>
-                              <td>
-                                <div>
-                                  <p>Keto 90 Second Bread</p>
-                                  <p>Community Recipes</p>
-                                </div>
-                                <div>
-                                  <span class="first">1</span
-                                  ><span class="second">portion (87 grams)</span
-                                  ><span class="third">87g</span>
-                                </div>
-                              </td>
-                              <td class="stats">
-                                <span>301</span><span> kcal</span>
-                              </td>
-                              <td class="stats">
-                                <span>27</span><span> g</span>
-                              </td>
-                              <td class="stats">
-                                <span>6</span><span> g</span>
-                              </td>
-                              <td class="stats">
-                                <span>11</span><span> g</span>
-                              </td>
-                              <td class="add">
-                                <img
-                                  class="a-quarter-img"
-                                  src="../assets/icons/addWhite.png"
-                                  alt=""
-                                />
-                              </td>
-                            </tr>
                           </tbody>
                         </table>
                         <div class="paper-bar">
-                          <button class="now-paper">1</button>
-                          <button>2</button>
-                          <button>3</button>
-                          <button>4</button>
-                          <button>5</button>
-                          <button>
-                            <img
-                              class="a-quarter-img"
-                              src="../assets/icons/3dot.png"
-                              alt=""
-                            />
-                          </button>
-                          <button>
+                          <div class="mid-paper-bar">
+                            <button class="now-paper">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                          </div>
+                          <button
+                            onclick="nowPaper<Math.ceil(food.length / maxPaper)-1?renderPaperBar(nowPaper+2):null"
+                          >
                             <img
                               class="a-quarter-img"
                               src="../assets/icons/next.png"
                               alt=""
                             />
                           </button>
-                          <button>
+                          <button
+                            onclick="renderPaperBar(Math.ceil(food.length / maxPaper))"
+                          >
                             <img
                               class="a-quarter-img"
                               src="../assets/icons/endNext.png"
@@ -416,13 +424,12 @@
                   <div class="item">
                     <span class="left-item">Energy</span
                     ><span class="right-item"
-                      ><span>40</span><span>kcal</span></span
+                      ><span class="energy">40</span><span>kcal</span></span
                     >
                   </div>
                   <div class="box-circle">
                     <div>
-                      <!-- class="circle-fat" -->
-                      <div>0g</div>
+                      <div class="circle-fat">0g</div>
                       <p>Fat</p>
                     </div>
                     <div>
@@ -430,8 +437,7 @@
                       <p>Carbohydrate</p>
                     </div>
                     <div>
-                      <!--  class="circle-protein" -->
-                      <div>0g</div>
+                      <div class="circle-protein">0g</div>
                       <p>Protein</p>
                     </div>
                     <div>
@@ -556,6 +562,11 @@
                       <div><span>2</span><span>ug</span></div>
                     </li>
                   </ul>
+                  <footer>
+                    <button onclick="location.href=`./ingredient.html`">
+                      Cancel</button
+                    ><button onclick="addFood()">Save and close</button>
+                  </footer>
                 </div>
               </div>
             </div>

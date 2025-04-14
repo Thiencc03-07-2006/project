@@ -52,6 +52,12 @@ if (
   window.location.pathname !== "/project-root/pages/signUp.html"
 ) {
   location.href = "/project-root/pages/signIn.html";
+} else if (
+  nowUser !== null &&
+  (window.location.pathname === "/project-root/pages/signIn.html" ||
+    window.location.pathname === "/project-root/pages/signUp.html")
+) {
+  window.history.back();
 }
 function signOut() {
   localStorage.removeItem("nowUser");
@@ -112,8 +118,60 @@ let food = JSON.parse(localStorage.getItem("food")) || [
     },
   },
 ];
+let recipes = JSON.parse(localStorage.getItem("recipes")) || [
+  {
+    id: 1,
+    coverSrc:
+      "https://nutriumstorageaccount.blob.core.windows.net/rails-active-storage/6qim5uox87nr22st6i7nzt8",
+    name: "Turmeric Roasted Cauliflower Salad (lowfodmap)",
+    description:
+      "Our roasted cauliflower salad with turmeric is low in calories and packed with punchy flavor.",
+    author: "Joana Jardim",
+    totalTime: "00:40",
+    preparationTime: "00:40",
+    finalWeight: "978.8 grams",
+    portions: 4,
+    ingredients: [food[2], food[1]],
+    cookingMethods: [
+      {
+        id: 1,
+        content:
+          "STEP 1 Heat the oven to 200C/fan 180C/gas 6. Put the cauliflower in an ovenproof dish or tin...",
+      },
+    ],
+    category: "Vegetarian dishes",
+  },
+  {
+    id: 2,
+    coverSrc:
+      "https://nutriumstorageaccount.blob.core.windows.net/rails-active-storage/6qim5uox87nr22st6i7nzt8",
+    name: "test",
+    description:
+      "Our roasted cauliflower salad with turmeric is low in calories and packed with punchy flavor.",
+    author: "ack Jardim",
+    totalTime: "00:40",
+    preparationTime: "00:40",
+    finalWeight: "978.8 grams",
+    portions: 4,
+    ingredients: [food[0], food[1]],
+    cookingMethods: [
+      {
+        id: 1,
+        content:
+          "STEP 1 Heat the oven to 200C/fan 180C/gas 6. Put the cauliflower in an ovenproof dish or tin...",
+      },
+    ],
+    category: "Vegetarian dishes",
+  },
+];
 /*ten acc*/
 let nowUsername = document.querySelector("#nowUsername");
 if (nowUsername) {
   nowUsername.textContent = nowUser.username;
 }
+let totalValue = (object, boxList, value) => {
+  return object.ingredients.reduce(
+    (pver, cur) => pver + (parseFloat(cur?.[boxList]?.[value]) || 0),
+    0
+  );
+};

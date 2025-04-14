@@ -131,12 +131,21 @@ function addFood() {
     listSelect.forEach((value) => (value.style.display = "none"));
     listSelect[0].style.display = "block";
     document.querySelector(".category").multiple = false;
+  } else {
+    alert("savefa");
   }
 }
 let listSelect = document.querySelectorAll(".category option");
 listSelect.forEach((value) => (value.style.display = "none"));
 listSelect[0].style.display = "block";
 document.querySelector(".category").multiple = false;
+let categorySelect = document.querySelector(".category");
+categorySelect.addEventListener("mousedown", function (event) {
+  event.preventDefault();
+  const option = event.target;
+  option.selected = !option.selected;
+});
+
 function openSelect() {
   listSelect.forEach((value) => (value.style.display = "block"));
   listSelect[0].style.display = "none";

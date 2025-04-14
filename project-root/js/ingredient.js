@@ -18,7 +18,7 @@ function render(arr) {
     arr
       .slice(nowPaper * maxPaper, (nowPaper + 1) * maxPaper)
       .map(
-        (value) => `<div class="box" onclick="setNowUserEdit(${value.id})">
+        (value) => `<div class="box" onclick="setNowFoodEdit(${value.id})">
                   <div>
                     <p>${value.name}</p>
                     <p>${value.source}</p>
@@ -81,7 +81,11 @@ function sortAction() {
         changeSortNow
     );
   }
-  render(selectRender());
+  render(
+    selectRender().filter((value) =>
+      value.name.toLowerCase().includes(search.value.toLowerCase())
+    )
+  );
 }
 function changeSort() {
   if (changeSortNow === 1) {
@@ -101,12 +105,12 @@ let paperArr = [];
 renderPaperBar(1);
 function renderPaperBar(value) {
   paperArr = Array.from(
-    { length: Math.ceil(food.length / maxPaper) },
+    { length: Math.ceil(selectRender().length / maxPaper) },
     (_, i) => i + 1
   );
   nowPaper = value - 1;
   midPaperBar.innerHTML =
-    Math.ceil(food.length / maxPaper) < 6 || nowPaper < 5
+    Math.ceil(selectRender().length / maxPaper) < 6 || nowPaper < 5
       ? paperArr
           .filter((value) => value < 6)
           .map(
@@ -117,7 +121,8 @@ function renderPaperBar(value) {
           )
           .join("") +
         `<button><img class="a-quarter-img" src="../assets/icons/3dot.png" alt="" width="12" height="3"></button>`
-      : nowPaper >= 5 && nowPaper < Math.ceil(food.length / maxPaper) - 1
+      : nowPaper >= 5 &&
+        nowPaper < Math.ceil(selectRender().length / maxPaper) - 1
       ? `<button onclick="renderPaperBar(1)">1</button>
                 <button onclick="renderPaperBar(2)">2</button>
                 <button><img class="a-quarter-img" src="../assets/icons/3dot.png" alt="" width="12" height="3"></button>
@@ -127,8 +132,8 @@ function renderPaperBar(value) {
       : `<button onclick="renderPaperBar(1)">1</button>
                 <button onclick="renderPaperBar(2)">2</button>
                 <button onclick="renderPaperBar(3)">3</button>
-                <button onclick="renderPaperBar(4)">4</button>
                 <button><img class="a-quarter-img" src="../assets/icons/3dot.png" alt="" width="12" height="3"></button>
+                <button onclick="renderPaperBar(${nowPaper})">${nowPaper}</button>
                 <button class="now-paper">${nowPaper + 1}</button>`;
   search.value.length > 0
     ? render(
@@ -138,7 +143,7 @@ function renderPaperBar(value) {
       )
     : render(selectRender());
 }
-function setNowUserEdit(nowIdEdit) {
+function setNowFoodEdit(nowIdEdit) {
   sessionStorage.setItem(
     "nowEditFood",
     JSON.stringify(food[food.findIndex((value) => value.id === nowIdEdit)])

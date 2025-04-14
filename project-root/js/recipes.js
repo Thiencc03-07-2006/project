@@ -1,26 +1,32 @@
+let box;
+let myRecipesFilter;
 let filterCategory = document.querySelector("select[name=filter]");
-let cloneFood = [];
+let cloneRecipes = [];
 filterCategory.addEventListener("change", function () {
   if (filterCategory.value === "") {
-    cloneFood = [];
+    cloneRecipes = [];
   } else {
-    cloneFood = food.filter((value) =>
-      value.category.includes(filterCategory.value)
+    cloneRecipes = recipes.filter((value) =>
+      value.category.some((value2) => value2.name === filterCategory.value)
     );
   }
   render(selectRender());
 });
-const selectRender = () => (cloneFood.length === 0 ? food : cloneFood);
+const selectRender = () => (cloneRecipes.length === 0 ? recipes : cloneRecipes);
 function render(arr) {
-  document.querySelector(".main-bottom").innerHTML = arr
+  document.querySelector(".main-bottom").innerHTML = (
+    myRecipesFilter
+      ? arr.filter((value) => value.author === nowUser.username)
+      : arr
+  )
     .slice(nowPaper * maxPaper, (nowPaper + 1) * maxPaper)
     .map(
-      (value) => `<div class="box">
+      (value) => `<div class="box" onclick="setNowRecipes(${value.id})">
     <div>
       <div>
         <img
           class="a-quarter-img"
-          src="./assets/icons/group.png"
+          src="../assets/icons/group.png"
           alt=""
         />
         <p>Community Recipes</p>
@@ -31,11 +37,11 @@ function render(arr) {
         ${value.name}
       </p>
       <div class="text-2">
-        <p>${value.source}</p>
+        <p>${value.author}</p>
         <div class="box-like">
           <img
             class="a-quarter-img"
-            src="./assets/icons/heart.png"
+            src="../assets/icons/heart.png"
             alt=""
           />
           <p>37</p>
@@ -44,7 +50,7 @@ function render(arr) {
       <div class="text-3">
         <img
           class="a-quarter-img"
-          src="./assets/icons/Vector.png"
+          src="../assets/icons/Vector.png"
           alt=""
         />
         <p>${value.category}</p>
@@ -59,11 +65,20 @@ function render(arr) {
             <td>Protein</td>
           </tr>
           <tr>
-            <td class="box-info-left">${value.quantity}</td>
-            <td class="stats">${value.macronutrients.energy} kcal</td>
-            <td class="stats">${value.macronutrients.fat} g</td>
-            <td class="stats">${value.macronutrients.carbohydrate} g</td>
-            <td class="stats">${value.macronutrients.protein} g</td>
+            <td class="box-info-left">100</td>
+            <td class="stats">${(
+              totalValue(value, "macronutrients", "energy") / value.portions
+            ).toFixed(2)} kcal</td>
+            <td class="stats">${(
+              totalValue(value, "macronutrients", "fat") / value.portions
+            ).toFixed(2)} g</td>
+            <td class="stats">${(
+              totalValue(value, "macronutrients", "carbohydrate") /
+              value.portions
+            ).toFixed(2)} g</td>
+            <td class="stats">${(
+              totalValue(value, "macronutrients", "protein") / value.portions
+            ).toFixed(2)} g</td>
           </tr>
         </table>
       </div>
@@ -71,6 +86,12 @@ function render(arr) {
   </div>`
     )
     .join("");
+  box = document.querySelectorAll(".main-bottom .box:not(:has(a))");
+  box.forEach((value) =>
+    value.addEventListener("click", function () {
+      location.href = `./recipesDetail.html`;
+    })
+  );
   loadImg();
 }
 let search = document.querySelector(`input[type = "search"]`);
@@ -93,7 +114,8 @@ function sortAction() {
   } else {
     selectRender().sort(
       (a, b) =>
-        (a.macronutrients[sort.value] - b.macronutrients[sort.value]) *
+        (totalValue(a, "macronutrients", sort.value) / a.portions -
+          totalValue(b, "macronutrients", sort.value) / b.portions) *
         changeSortNow
     );
   }
@@ -136,18 +158,18 @@ function renderPaperBar(value) {
           )
           .join("")
       : nowPaper >= 3 &&
-        nowPaper < Math.ceil(selectRender.length / maxPaper) - 3
+        nowPaper < Math.ceil(selectRender().length / maxPaper) - 3
       ? `<button onclick="renderPaperBar(1)">1</button>
                 <button onclick="renderPaperBar(2)">2</button>
                 <button>...</button>
                 <button class="now-paper">${nowPaper + 1}</button>
                 <button>...</button>
                 <button onclick="renderPaperBar(${
-                  Math.ceil(selectRender.length / maxPaper) - 1
-                })">${Math.ceil(selectRender.length / maxPaper) - 1}</button>
+                  Math.ceil(selectRender().length / maxPaper) - 1
+                })">${Math.ceil(selectRender().length / maxPaper) - 1}</button>
                 <button onclick="renderPaperBar(${Math.ceil(
-                  selectRender.length / maxPaper
-                )})">${Math.ceil(selectRender.length / maxPaper)}</button>`
+                  selectRender().length / maxPaper
+                )})">${Math.ceil(selectRender().length / maxPaper)}</button>`
       : nowPaper < 3
       ? `<button onclick="renderPaperBar(1)" class="${
           nowPaper === 0 ? "now-paper" : ""
@@ -163,42 +185,42 @@ function renderPaperBar(value) {
                 }">4</button>
                 <button>...</button>
                 <button onclick="renderPaperBar(${
-                  Math.ceil(selectRender.length / maxPaper) - 1
-                })">${Math.ceil(selectRender.length / maxPaper) - 1}</button>
+                  Math.ceil(selectRender().length / maxPaper) - 1
+                })">${Math.ceil(selectRender().length / maxPaper) - 1}</button>
                 <button onclick="renderPaperBar(${Math.ceil(
-                  selectRender.length / maxPaper
-                )})">${Math.ceil(selectRender.length / maxPaper)}</button>`
+                  selectRender().length / maxPaper
+                )})">${Math.ceil(selectRender().length / maxPaper)}</button>`
       : `<button onclick="renderPaperBar(1)">1</button>
                 <button onclick="renderPaperBar(2)">2</button>
                 <button>...</button>
                 <button onclick="renderPaperBar(${
-                  Math.ceil(selectRender.length / maxPaper) - 3
+                  Math.ceil(selectRender().length / maxPaper) - 3
                 })" class="${
-          nowPaper === Math.ceil(selectRender.length / maxPaper) - 4
+          nowPaper === Math.ceil(selectRender().length / maxPaper) - 4
             ? "now-paper"
             : ""
-        }">${Math.ceil(selectRender.length / maxPaper) - 3}</button>
+        }">${Math.ceil(selectRender().length / maxPaper) - 3}</button>
                 <button onclick="renderPaperBar(${
-                  Math.ceil(selectRender.length / maxPaper) - 2
+                  Math.ceil(selectRender().length / maxPaper) - 2
                 })" class="${
-          nowPaper === Math.ceil(selectRender.length / maxPaper) - 3
+          nowPaper === Math.ceil(selectRender().length / maxPaper) - 3
             ? "now-paper"
             : ""
-        }">${Math.ceil(selectRender.length / maxPaper) - 2}</button>
+        }">${Math.ceil(selectRender().length / maxPaper) - 2}</button>
                 <button onclick="renderPaperBar(${
-                  Math.ceil(selectRender.length / maxPaper) - 1
+                  Math.ceil(selectRender().length / maxPaper) - 1
                 })" class="${
-          nowPaper === Math.ceil(selectRender.length / maxPaper) - 2
+          nowPaper === Math.ceil(selectRender().length / maxPaper) - 2
             ? "now-paper"
             : ""
-        }">${Math.ceil(selectRender.length / maxPaper) - 1}</button>
+        }">${Math.ceil(selectRender().length / maxPaper) - 1}</button>
                 <button onclick="renderPaperBar(${Math.ceil(
-                  selectRender.length / maxPaper
+                  selectRender().length / maxPaper
                 )})" class="${
-          nowPaper === Math.ceil(selectRender.length / maxPaper - 1)
+          nowPaper === Math.ceil(selectRender().length / maxPaper - 1)
             ? "now-paper"
             : ""
-        }">${Math.ceil(selectRender.length / maxPaper)}</button>`;
+        }">${Math.ceil(selectRender().length / maxPaper)}</button>`;
   search.value.length > 0
     ? render(
         selectRender().filter((value) =>
@@ -206,4 +228,12 @@ function renderPaperBar(value) {
         )
       )
     : render(selectRender());
+}
+function setNowRecipes(nowIdEdit) {
+  sessionStorage.setItem(
+    "nowRecipes",
+    JSON.stringify(
+      recipes[recipes.findIndex((value) => value.id === nowIdEdit)]
+    )
+  );
 }

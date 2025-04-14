@@ -45,7 +45,12 @@ let chloride = document.querySelector(".chloride");
 /**/
 let name = document.querySelector(".name");
 let source = document.querySelector(".source");
-let category = document.querySelector(".category");
+let categorySelect = document.querySelector(".category");
+categorySelect.addEventListener("mousedown", function (event) {
+  event.preventDefault();
+  const option = event.target;
+  option.selected = !option.selected;
+});
 let energy = document.querySelector(".energy");
 let fat = document.querySelector(".fat");
 let carbohydrate = document.querySelector(".carbohydrate");
@@ -109,7 +114,7 @@ function openSelect() {
   listSelect[0].style.display = "none";
   document.querySelector(".category").multiple = true;
   if (fistTime) {
-    for (let option of category.options) {
+    for (let option of categorySelect.options) {
       if (nowEditFood.category.includes(option.value)) {
         option.selected = true;
       }
@@ -118,12 +123,12 @@ function openSelect() {
   }
 }
 function saveFood() {
-  category = Array.from(document.querySelector(".category").selectedOptions)
+  let selectedCategories = Array.from(categorySelect.selectedOptions)
     .map((value) => value.value)
     .filter((value) => value !== "bug1");
   if (
     name.value.length > 0 &&
-    category.length > 0 &&
+    selectedCategories.length > 0 &&
     energy.value >= 0 &&
     fat.value >= 0 &&
     carbohydrate.value >= 0 &&
@@ -133,7 +138,7 @@ function saveFood() {
       id: nowEditFood.id,
       name: name.value,
       source: source.textContent,
-      category: category.join(", "),
+      category: selectedCategories.join(", "),
       quantity: "100g",
       macronutrients: {
         energy: energy.value,
@@ -192,6 +197,28 @@ function saveFood() {
     };
     food[food.findIndex((value) => value.id === nowEditFood.id)] = nowEditFood;
     localStorage.setItem("food", JSON.stringify(food));
-    location.href = "../pages/ingredient.html";
+    updateRecipes();
+    window.history.back();
+  } else {
+    alert("savefa");
+  }
+}
+function updateRecipes() {
+  let food = JSON.parse(localStorage.getItem("food"));
+  let recipes = JSON.parse(localStorage.getItem("recipes")) || null;
+  if (recipes) {
+    recipes.forEach((value) => {
+      value.ingredients = value.ingredients.map((value2) => {
+        return food.find((value3) => value3.id === value2.id);
+      });
+    });
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+  }
+  let nowRecipes = JSON.parse(sessionStorage.getItem("nowRecipes")) || null;
+  if (nowRecipes) {
+    nowRecipes.ingredients = nowRecipes.ingredients.map((value1) => {
+      return food.find((value2) => value2.id === value1.id);
+    });
+    sessionStorage.setItem("nowRecipes", JSON.stringify(nowRecipes));
   }
 }

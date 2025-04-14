@@ -51,7 +51,7 @@
           >
         </main>
         <footer>
-          <a href="../pages/signIn.html"
+          <a onclick="signOut()" href="../pages/signIn.html"
             ><div>
               <img
                 class="a-quarter-img"
@@ -74,7 +74,7 @@
               />
             </button>
             <div>
-              <span>Cường Trần</span>
+              <span id="nowUsername">Cường Trần</span>
               <div class="box"></div>
             </div>
           </div>
@@ -105,6 +105,7 @@
                 </div>
                 <button class="box-bottom">
                   <img src="../assets/icons/Vector.png" alt="" /><span
+                    class="category"
                     >New category</span
                   >
                 </button>
@@ -117,16 +118,6 @@
                 </div>
               </div>
               <div class="box-right">
-                <div class="box-top">
-                  <div>
-                    <p>Publish recipe</p>
-                    <p>
-                      Publish your recipe on your website or share it with the
-                      Nutrium community
-                    </p>
-                  </div>
-                  <button>Publish</button>
-                </div>
                 <div class="box-bottom">
                   <p>Basic information</p>
                   <p>Check and edit recipe's basic information</p>
@@ -134,6 +125,8 @@
                     <div>
                       <label for="">Name</label
                       ><input
+                        readonly
+                        class="name"
                         type="text"
                         value="Turmeric Roasted Cauliflower Salad (lowfodmap)"
                       />
@@ -141,6 +134,8 @@
                     <div class="px61">
                       <label for="">Description</label
                       ><input
+                        readonly
+                        class="description"
                         type="text"
                         value="Our roasted cauliflower salad with turmeric is low in calories and packed with punchy flavor. Turmeric
                       adds lovely color and flavor to this easy vegan-friendly recipe"
@@ -148,23 +143,43 @@
                     </div>
                     <div>
                       <label for="">Author</label
-                      ><input type="text" value="Joana Jardim" />
+                      ><input
+                        readonly
+                        class="author"
+                        type="text"
+                        value="Joana Jardim"
+                      />
                     </div>
                     <div>
                       <label for="">Total time</label
-                      ><input type="text" value="00:40" />
+                      ><input
+                        readonly
+                        class="totalTime"
+                        type="text"
+                        value="00:40"
+                      />
                     </div>
                     <div>
                       <label for="">Preparation time</label
-                      ><input type="text" value="00:40" />
+                      ><input
+                        readonly
+                        class="preparationTime"
+                        type="text"
+                        value="00:40"
+                      />
                     </div>
                     <div>
                       <label for="">Final weight</label
-                      ><input type="text" value="978.8 grams" />
+                      ><input
+                        readonly
+                        class="finalWeight"
+                        type="text"
+                        value="978.8 grams"
+                      />
                     </div>
                     <div>
                       <label for="">Portions</label
-                      ><input type="text" value="4" />
+                      ><input readonly class="portions" type="text" value="4" />
                     </div>
                   </div>
                 </div>
@@ -213,6 +228,8 @@
                   <div>
                     <label for="">1</label>
                     <textarea
+                      readonly
+                      class="cookingMethods"
                       spellcheck="false"
                       oninput="autoSizeTextaren(this)"
                       placeholder="Add new cooking method"
@@ -235,7 +252,7 @@ drizzle with the dressing.</textarea
                   <div class="item">
                     <span class="left-item">Energy</span
                     ><span class="right-item"
-                      ><span>351</span><span>kcal</span></span
+                      ><span class="energy">351</span><span>kcal</span></span
                     >
                   </div>
                   <div class="box-circle">
@@ -278,99 +295,123 @@ drizzle with the dressing.</textarea
                   <ul>
                     <li>
                       <span>Sodium</span>
-                      <div><span>1418</span><span>mg</span></div>
+                      <div><span class="sodium">1418</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Vitamin A</span>
-                      <div><span>18</span><span>ug</span></div>
+                      <div>
+                        <span class="vitamin-a">18</span><span>ug</span>
+                      </div>
                     </li>
                     <li>
                       <span>Vitamin B-6</span>
-                      <div><span>0</span><span>mg</span></div>
+                      <div>
+                        <span class="vitamin-b-6">0</span><span>mg</span>
+                      </div>
                     </li>
                     <li>
                       <span>Vitamin B-12</span>
-                      <div><span>0</span><span>ug</span></div>
+                      <div>
+                        <span class="vitamin-b-12">0</span><span>ug</span>
+                      </div>
                     </li>
                     <li>
                       <span>Vitamin C</span>
-                      <div><span>50</span><span>mg</span></div>
+                      <div>
+                        <span class="vitamin-c">50</span><span>mg</span>
+                      </div>
                     </li>
                     <li>
                       <span>Vitamin D (D2 + D3)</span>
-                      <div><span>0</span><span>ug</span></div>
+                      <div>
+                        <span class="vitamin-d-d2-d3">0</span><span>ug</span>
+                      </div>
                     </li>
                     <li>
                       <span>Vitamin E</span>
-                      <div><span>1</span><span>mg</span></div>
+                      <div><span class="vitamin-e">1</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Vitamin K</span>
-                      <div><span>87</span><span>ug</span></div>
+                      <div>
+                        <span class="vitamin-k">87</span><span>ug</span>
+                      </div>
                     </li>
                     <li>
                       <span>Sugars</span>
-                      <div><span>13</span><span>g</span></div>
+                      <div><span class="sugars">13</span><span>g</span></div>
                     </li>
                     <li>
                       <span>Calcium</span>
-                      <div><span>88</span><span>mg</span></div>
+                      <div><span class="calcium">88</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Iron</span>
-                      <div><span>4</span><span>mg</span></div>
+                      <div><span class="iron">4</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Magnesium</span>
-                      <div><span>127</span><span>mg</span></div>
+                      <div>
+                        <span class="magnesium">127</span><span>mg</span>
+                      </div>
                     </li>
                     <li>
                       <span>Phosphorus</span>
-                      <div><span>251</span><span>mg</span></div>
+                      <div>
+                        <span class="phosphorus">251</span><span>mg</span>
+                      </div>
                     </li>
                     <li>
                       <span>Potassium</span>
-                      <div><span>649</span><span>mg</span></div>
+                      <div>
+                        <span class="potassium">649</span><span>mg</span>
+                      </div>
                     </li>
                     <li>
                       <span>Zinc</span>
-                      <div><span>2</span><span>mg</span></div>
+                      <div><span class="zinc">2</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Copper</span>
-                      <div><span>1</span><span>mg</span></div>
+                      <div><span class="copper">1</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Fluoride</span>
-                      <div><span>1</span><span>ug</span></div>
+                      <div><span class="fluoride">1</span><span>ug</span></div>
                     </li>
                     <li>
                       <span>Manganese</span>
-                      <div><span>2</span><span>mg</span></div>
+                      <div><span class="manganese">2</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Selenium</span>
-                      <div><span>4</span><span>ug</span></div>
+                      <div><span class="selenium">4</span><span>ug</span></div>
                     </li>
                     <li>
                       <span>Thiamin</span>
-                      <div><span>0</span><span>mg</span></div>
+                      <div><span class="thiamin">0</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Riboflavin</span>
-                      <div><span>0</span><span>mg</span></div>
+                      <div>
+                        <span class="riboflavin">0</span><span>mg</span>
+                      </div>
                     </li>
                     <li>
                       <span>Niacin</span>
-                      <div><span>3</span><span>mg</span></div>
+                      <div><span class="niacin">3</span><span>mg</span></div>
                     </li>
                     <li>
                       <span>Pantothenic acid</span>
-                      <div><span>1</span><span>mg</span></div>
+                      <div>
+                        <span class="pantothenic-acid">1</span><span>mg</span>
+                      </div>
                     </li>
                     <li>
                       <span>Folate, total</span>
-                      <div><span>156</span><span>ug</span></div>
+                      <div>
+                        <span class="folate-total">156</span><span>ug</span>
+                      </div>
                     </li>
                   </ul>
                 </div>
